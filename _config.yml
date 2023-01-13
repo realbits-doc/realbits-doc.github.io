@@ -1,0 +1,96 @@
+# * Site settings
+title: Realbits documents
+email: doc.realbits@gmail.com
+description: Document site for realbits.
+url: "https://realbits-doc.github.io"
+baseurl: "/"
+timezone: Asia/Seoul
+
+# * Build settings
+remote_theme: adamrehn/jekyll-theme-gitbook@v0.0.6
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude: [".gitignore", "LICENSE", "README.md"]
+sass:
+  style: compressed
+
+# * Only needed for local development, will be enabled automatically by GitHub Pages
+plugins: ["jekyll-remote-theme"]
+
+# * Theme settings
+theme-settings:
+  header-title: Realbits
+
+  # * Copyright settings
+  copyright:
+    author: Realbits
+    license: "Licensed under the Apache License, Version 2.0"
+    year: 2023
+
+  # * The collection that contains our chapters
+  collection: chapters
+
+  # * Enable generation of links for chapter index pages
+  indices: true
+
+  # * Navigation menu settings (OPTIONAL, only needed if you want to override the defaults)
+  navigation:
+    # * Specifies whether navigation links should be generated for chapter index files that use the `chapter-index` layout (OPTIONAL, defaults to false)
+    indices: false
+
+    # * Specifies whether the navigation links for each chapter should be output as collapsible sections using HTML <detail> tags, with chapter headings as <summary> tags (OPTIONAL, defaults to false)
+    collapsible: false
+
+    # * When collapsible sections are enabled, specifies whether sections are collapsed by default (OPTIONAL, defaults to false)
+    collapsed: false
+
+# * Configure the permalinks for each chapter
+collections_dir: _collections
+collections:
+  chapters:
+    output: true
+    permalink: /:path
+
+# * Use front matter defaults to supply the metadata for each chapter
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "default"
+  - scope:
+      path: "_collections/_chapters/dulls"
+    values:
+      chapter: "Dulls"
+      chapnum: 1
+  - scope:
+      path: "_collections/_chapters/avame"
+    values:
+      chapter: "Avame"
+      chapnum: 2
+  - scope:
+      path: "_collections/_chapters/rent-content"
+    values:
+      chapter: "Rent Content"
+      chapnum: 3
+  - scope:
+      path: "_collections/_chapters/rent-market"
+    values:
+      chapter: "Rent Market"
+      chapnum: 4
+  - scope:
+      path: "_collections/_chapters/prompt-content"
+    values:
+      chapter: "Prompt Content"
+      chapnum: 5
+  - scope:
+      path: "_collections/_chapters/whatsprompt"
+    values:
+      chapter: "Whatsprompt"
+      chapnum: 6
+  - scope:
+      path: "_collections/_chapters/contract"
+    values:
+      chapter: "Contract"
+      chapnum: 7
